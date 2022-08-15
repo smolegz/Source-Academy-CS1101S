@@ -1,35 +1,32 @@
-
-
-function biggie_size(n) {
-    return n<=4 && n>=1? n+4: "Not a valid meal";
+function biggie_size(meal) {
+    return meal+4;
 }
 
-function unbiggie_size(n) {
-    return n<=8 && n>=5? n-4: "Not a valid biggie-sized meal entered";
+function unbiggie_size(meal) {
+    return meal<=8 && meal>=5? meal-4: "Not a valid biggie-sized meal entered";
 }
 
-function is_biggie_size(n) {
-    return n<=8 && n>=5? true: n<=4 && n>=1? false: "Not a valid meal";
+function is_biggie_size(meal) {
+    return meal>=5;
 }
 
-function combo_price(n) {
-    return n>4 && n<=8? (n-4)*1.17+0.5: 
-    n<=4 && n>=1? n*1.17:
-    "Invalid meal";
+function combo_price(meal) {
+    return is_biggie_size(meal)? (unbiggie_size(meal))*1.17+0.5: 
+    meal*1.17;
 }
 
 function empty_order() {
     return 0;
 }
 
-function add_to_order(a,b) {
-    return stringify(a)+stringify(b);
+function add_to_order(order,combo) {
+    return order*10+combo;
 }
 
-function last_combo(n) {
-    return n%10;
+function last_combo(combo) {
+    return combo%10;
 }
 
-function other_combos(n) {
-    return math_floor(n/10);
+function other_combos(meal) {
+    return math_floor(meal/10);
 }
