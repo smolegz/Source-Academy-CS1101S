@@ -49,12 +49,12 @@ function combinations(xs, k) {
     if (is_null(xs)) {
         return list();
     } else if (k === 1) {
-        return xs;
+        return map(x => list(x), xs);
     } else {
         
         const a = combinations(tail(xs), k - 1);
-        
-        return append(map(x=> append(list(head(xs)), list(x)), a), combinations(tail(xs),k)); 
+
+        return append(map(x=> append(list(head(xs)), x), a), combinations(tail(xs),k)); 
     }
 }
 
