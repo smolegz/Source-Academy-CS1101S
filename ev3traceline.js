@@ -17,19 +17,19 @@ function move(right_wheel, left_wheel, pos, speed) {
 function traceline() {
     let on_track = true;
     let run = true;
-    let k = 0;
+    let counter = 0;
     let speed = 60; 
     
     while (run) {
         
         while(on_track) {
-            k = 0;
+            counter = 0;
             move(right, left, 10, 100)
             on_track = ev3_reflectedLightIntensity(color_sens) <= 10;
         }
         
         while (!on_track) {
-            if (k === 20) {
+            if (counter === 20) {
                 run = false;
                 break;
             } else {}
@@ -50,7 +50,7 @@ function traceline() {
                 }
             }
             speed = speed + 20;
-            k = k + 1;
+            counter = counter + 1;
         }
     }
 }
