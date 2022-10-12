@@ -24,7 +24,7 @@ function traceline() {
         
         while(on_track) {
             counter = 0;
-            move(right, left, 10, 100)
+            move(right, left, 10, 100);
             on_track = ev3_reflectedLightIntensity(color_sens) <= 10;
         }
         
@@ -35,13 +35,13 @@ function traceline() {
             } else {}
             display("not on track. Iteration: " + stringify(k));
             
-            waitRun(right, 10, speed) // turn LEFT and check for line
+            waitRun(right, 10, speed); // turn LEFT and check for line
             on_track = (ev3_reflectedLightIntensity(color_sens)) <= 10;
             if (on_track) {
                 break;
             } else {
-                waitRun(left, 10, speed) // turn back original position
-                waitRun(left, 10, speed) //  turn right and check for line
+                waitRun(left, 10, speed); // turn back original position
+                waitRun(left, 10, speed); //  turn right and check for line
                 on_track = (ev3_reflectedLightIntensity(color_sens)) <= 10;
                 if (on_track) {
                     break;
