@@ -58,7 +58,7 @@ function first_denomination(kinds_of_coins) {
  kinds_of_coins === 5 ? 100 : 0;
 }
 
-cc(2000, 5);
+cc(20, 3);
 
 // arr;
 
