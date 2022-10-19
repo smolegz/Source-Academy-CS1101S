@@ -37,7 +37,7 @@ function partial_sums(s) {
 
 const sum = partial_sums(from2);
 
-stream_ref(sum, 4);
+stream_ref(sum, 100);
 
 
 
