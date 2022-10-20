@@ -11,6 +11,12 @@
 //     return stream(xs,n);
 // }
 
+// function zip(ss) {
+//     return pair(head(head(ss)), 
+//        () => zip(append(tail(ss), list(stream_tail(head(ss))) )));
+// }
+
+
 // const ones = pair(1, () => ones);
 // const twos = pair(2, () => twos);
 // const threes = pair(3, () => threes);
@@ -32,14 +38,12 @@ function add_streams(s1, s2) {
 
 const from2 = integers_from(2);
 function partial_sums(s) {
-    return pair(1, () => add_streams(partial_sums(from2), from2));
+    return pair(1, () => add_streams(partial_sums(s), s));
 }
 
 const sum = partial_sums(from2);
 
-stream_ref(sum, 100);
-
-
+eval_stream(sum, 10);
 
 
 
