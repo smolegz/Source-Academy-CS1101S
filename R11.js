@@ -446,6 +446,10 @@ function setup_environment() {
 
 const the_global_environment = setup_environment();
 
+//short hand
+const dl = display_list;
+const pe = parse_and_evaluate;
+
 // 
 // running the evaluator
 // 
