@@ -398,6 +398,7 @@ const primitive_functions = list(
        list("error",   error            ),
        list("math_abs",math_abs         ),
        list("+",       (x, y) => x + y  ),
+       list("parse",parse               ),
        list("-",       (x, y) => x - y  ),
        list("-unary",   x     =>   - x  ),
        list("*",       (x, y) => x * y  ),
